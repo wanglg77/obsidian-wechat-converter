@@ -110,7 +110,7 @@ window.AppleTheme = class AppleTheme {
       sloganBg: '#fef6f0',
       sloganColor: '#8b4513',
       sloganBorderColor: '#d4a574',
-      sloganText: '内涵铸魂 · 病历质量提升专项',
+      sloganText: '数智驱动，全域质管',
     },
     wechat: {
       name: '经典',
