@@ -82,6 +82,36 @@ window.AppleTheme = class AppleTheme {
       // Removed blockquoteBorderColor to allow theme color (was #d0d7de)
       // Removed blockquoteBg to allow theme color tint (was #ffffff)
     },
+    byl: {
+      name: '内涵铸魂',
+      lineHeight: 1.82,
+      paragraphGap: 18,
+      h1Decoration: 'none',
+      h2Decoration: 'none',
+      h3Decoration: 'none',
+      h4Decoration: 'none',
+      h5Decoration: 'none',
+      h6Decoration: 'none',
+      headingWeight: 700,
+      headingLetterSpacing: 0,
+      textColor: '#3e3e3e',
+      headingColor: '#3e3e3e',
+      headingAlign: 'left',
+      linkDecoration: 'underline',
+      blockquoteBorderWidth: 4,
+      blockquoteBg: '#f8fafc',
+      blockquoteStyle: 'soft',
+      tableHeaderBg: '#f6f8fa',
+      tableCellPadding: 10,
+      figurePadding: 8,
+      figureBorderColor: '#e8eaed',
+      // 内涵铸魂主题特殊配置
+      hasSlogan: true,
+      sloganBg: '#fef6f0',
+      sloganColor: '#8b4513',
+      sloganBorderColor: '#d4a574',
+      sloganText: '内涵铸魂 · 病历质量提升专项',
+    },
     wechat: {
       name: '经典',
       lineHeight: 1.8,
@@ -572,6 +602,8 @@ window.AppleTheme = class AppleTheme {
         return `${base} text-align: left; color: ${headingColor}; background-image: linear-gradient(to right, ${color}, ${color}33); background-size: 100% 2px; background-repeat: no-repeat; background-position: bottom left; padding-bottom: 14px;`;
       case 'colorful-title':
         return `${base} color: #ffffff; background: ${color}; padding: 12px 18px; border-radius: 6px; box-shadow: 6px 6px 0 ${color}33;`;
+      case 'left-aligned':
+        return `font-family: ${font}; display: block; font-size: ${fontSize}px; font-weight: bold; margin: 30px 0 20px; color: ${headingColor}; text-align: left; line-height: 1.2;${config.headingLetterSpacing ? ` letter-spacing: ${config.headingLetterSpacing}px` : ''}`;
       default: // none or unknown
         return this.joinStyleStrings(base, config.headingLetterSpacing ? `letter-spacing: ${config.headingLetterSpacing}px` : '');
     }
@@ -621,6 +653,8 @@ window.AppleTheme = class AppleTheme {
         return `${base} color: #ffffff; background: ${color}; padding: 10px 16px; border-radius: 6px; box-shadow: 5px 5px 0 ${color}33;`;
       case 'colorful-chapter':
         return `${base} text-align: left; border-left: 4px solid ${color}; background: ${color}12; padding: 10px 14px; border-radius: 0 4px 4px 0;`;
+      case 'left-aligned':
+        return `font-family: ${font}; display: block; font-size: ${fontSize}px; font-weight: bold; margin: 32px 0 16px; text-align: left; color: ${headingColor}; line-height: 1.25;${config.headingLetterSpacing ? ` letter-spacing: ${config.headingLetterSpacing}px` : ''}`;
       case 'paper-section':
         return `font-family: ${AppleTheme.FONTS.serif}; display: block; font-size: ${fontSize}px; font-weight: bold; margin: 34px 0 16px; color: ${headingColor}; text-align: left; line-height: 1.35; border-bottom: 1px solid ${color}55; padding-bottom: 8px;`;
       case 'grid-section':
@@ -656,6 +690,8 @@ window.AppleTheme = class AppleTheme {
         return `${base} background-image: linear-gradient(${color}, ${color}); background-size: 3px 55%; background-position: left center; background-repeat: no-repeat; padding-left: 12px;`;
       case 'typo-section':
         return `${base} font-weight: 700; margin: 28px 0 14px; line-height: 1.35; border-left: 2px solid #d8d8d8; padding-left: 10px;`;
+      case 'left-aligned':
+        return `${base} font-weight: bold; margin: 20px 0 12px; line-height: 1.3;`;
       case 'media-section':
         return `${base} display: inline-block; width: auto; background: ${color}14; border: 1px solid ${color}33; padding: 5px 10px; border-radius: 2px;`;
       case 'colorful-section':

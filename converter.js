@@ -651,6 +651,44 @@ ${macHeader}
     html = this.removeBlockquoteParagraphMargins(html); // Fix: Remove margins from <p> inside <blockquote> for vertical centering
     html = this.fixMathJaxTags(html); // Fix: Replace <mjx-container> with WeChat-compatible tags
     html = this.sanitizeHtml(html); // Final security pass: Neutralize XSS and dangerous tags
+
+    // 内涵铸魂主题：添加 slogan
+    const config = this.theme.getThemeConfig();
+    if (config.hasSlogan) {
+      const sloganText = config.sloganText || '内涵铸魂';
+      const sloganHtml = `
+<div style="
+  text-align: center;
+  margin: 30px auto;
+  padding: 20px 30px;
+  background: ${config.sloganBg || '#fef6f0'};
+  border-top: 2px solid ${config.sloganBorderColor || '#d4a574'};
+  border-bottom: 2px solid ${config.sloganBorderColor || '#d4a574'};
+  max-width: 600px;
+">
+  <div style="
+    font-size: 14px;
+    color: ${config.sloganBorderColor || '#d4a574'};
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+  ">❀ ❀ ❀</div>
+  <div style="
+    font-size: 18px;
+    font-weight: bold;
+    color: ${config.sloganColor || '#8b4513'};
+    letter-spacing: 2px;
+    line-height: 1.8;
+  ">${sloganText}</div>
+  <div style="
+    font-size: 14px;
+    color: ${config.sloganBorderColor || '#d4a574'};
+    letter-spacing: 3px;
+    margin-top: 15px;
+  ">❀ ❀ ❀</div>
+</div>`;
+      html = sloganHtml + html;
+    }
+
     return `<section style="${this.getInlineStyle('section')}">${html}</section>`;
   }
 
