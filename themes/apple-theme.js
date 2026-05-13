@@ -82,8 +82,8 @@ window.AppleTheme = class AppleTheme {
       // Removed blockquoteBorderColor to allow theme color (was #d0d7de)
       // Removed blockquoteBg to allow theme color tint (was #ffffff)
     },
-    byl: {
-      name: '内涵铸魂',
+    医质管: {
+      name: '医质管',
       lineHeight: 1.82,
       paragraphGap: 18,
       h1Decoration: 'none',
